@@ -14,11 +14,14 @@ router.route('/pirates')
     })
   })
   .post((req, res, next) => {
+    console.log("POST PLACED /pirates");
+    console.log(req.body);
     // create a new pirate
     if(req.body.pirate_image_url == ''){
       req.body.pirate_image_url = 'img/jolly.png'
     }
     Pirates.create(req.body).then((response) => {
+      console.log("pirate created!!", response);
       res.redirect('/pirates')
     })
   })
