@@ -1,7 +1,28 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(lang="en")
+	head
+		title= title
+		link(rel='stylesheet', href='/bower/bootstrap/dist/css/bootstrap.min.css')
+		link(rel="stylesheet", href="/stylesheets/style.css")
+	body
+		nav.navbar.navbar-dark.bg-inverse
+			ul.nav.navbar-nav
+				li.nav-item.active
+					a.nav-link(href='/pirates')
+						| Galvanize Pirates! 
+						span.sr-only (current)
+				li.nav-item
+					a.nav-link(href='/pirates/new') New Pirate
+				li.nav-item
+					a.nav-link(href='/pirates') All Pirates
+
+				form.form-inline.pull-xs-right
+					input.form-control(type='text', placeholder='Search')
+					button.btn.btn-success-outline(type='submit') Search
+
+
+		script(src="/bower/jquery/dist/jquery.min.js")
+		script(src="/bower/bootstrap/dist/js/bootstrap.min.js")
+		script(src="/bower/datatables.net/js/jquery.dataTables.js")
+		script(src="/bower/vide/dist/jquery.vide.js")
+		block content

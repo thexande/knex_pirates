@@ -1,5 +1,47 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}
+	.container
+		br
+		br
+		//- .jumbotron
+		//- 	h1 Welcome to Galvanize Pirates!
+		//- 	p view a list of pirates or add a new one!
+		//- 	a.btn.btn-success(href="#") Add Pirate!
+		//- table.table.table-hover
+		//- 	thead.table-inverse
+		//- 		each val, key in pirates[0]
+		//- 			th= key
+		//- 		th Edit 
+		//- 		th Delete 
+		//- 	tbody
+		//- 		each pirate in pirates
+		//- 			tr
+		//- 				each val2, key2 in pirates[0]
+		//- 					td= pirate[key2]
+		//- 				td 
+		//- 					a.btn.btn-primary Edit
+		//- 				td 
+		//- 					a.btn.btn-danger Delete
+		html
+			body
+				.card-columns
+					each pirate in pirates
+						.card(class="card-#{pirate.pirate_beard}")
+							img.card-img-top.img-responsive(src='img/jolly.png', alt='Card image cap')
+							.card-block
+								h4.card-title #{pirate.pirate_name}
+							ul.list-group.list-group-flush
+								li.list-group-item 
+									strong Accessory: 
+									span #{pirate.pirate_accessory}
+								li.list-group-item 
+									strong Beard: 
+									span #{pirate.pirate_beard}
+								li.list-group-item 
+									strong Drink: 
+									span #{pirate.pirate_drink}
+							.card-footer.text-muted.text-center
+								.btn-group
+									a.btn.btn-primary Edit
+									a.btn.btn-danger Delete

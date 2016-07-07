@@ -1,8 +1,26 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+img{
+  width: 100%
 }
-
-a {
-  color: #00B7FF;
+.card-img-top{
+  width: 100%;
+}
+.text-center{
+  text-align: center;
+}
+.card-inverse{
+  background-color: #000;
+  border-color: #000;
+}
+.card-default{
+  background-color: #333;
+  border-color: #333;
+}
+.card-default>.card-block{
+  color:white;
+}
+#vide-island{
+  position:absolute;
+  height:100%;
+  width:100%;
+  overflow: hidden;
 }
