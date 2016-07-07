@@ -15,7 +15,6 @@ router.route('/pirates')
   })
   .post((req, res, next) => {
     // create a new pirate
-    console.log(req.body);
     if(req.body.pirate_image_url == ''){
       req.body.pirate_image_url = 'img/jolly.png'
     }

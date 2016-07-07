@@ -6,8 +6,8 @@ block content
 			br
 			.row
 				.col-md-5.col-md-offset-3
-					.card
-						img.card-img-top(src='/img/jolly.png', alt='Card image cap')
+					.card(class="card-#{pirate.pirate_beard}")
+						img.card-img-top(src='#{pirate.pirate_image_url}', alt='Card image cap')
 						form(method="post", action="/pirates/#{pirate.id}/edit")
 							input(name="id", type="hidden", value="#{pirate.id}")
 							.card-block
@@ -32,6 +32,6 @@ block content
 									label(for="pirate_image_url") Profile Pic URL
 										div
 											small.text-muted optional
-									input.form-control(name="pirate_image_url") 
+									input.form-control(value="#{pirate.pirate_image_url}", name="pirate_image_url") 
 							.card-footer.text-muted.text-center
 								button.btn.btn-success.btn-lg(type="submit") Update Pirate
