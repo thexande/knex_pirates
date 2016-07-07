@@ -1,0 +1,37 @@
+extends layout
+block content
+	div#vide-island(data-vide-bg="mp4: /video/island.mp4" data-vide-options="postion: 0% 0%, muted: true, loop:true")  
+		.container.text-center
+			br
+			br
+			.row
+				.col-md-5.col-md-offset-3
+					.card
+						img.card-img-top(src='/img/jolly.png', alt='Card image cap')
+						form(method="post", action="/pirates/#{pirate.id}/edit")
+							input(name="id", type="hidden", value="#{pirate.id}")
+							.card-block
+								input.form-control(name="pirate_name", type="text", placeholder="Pirate Name" value="#{pirate.pirate_name}")
+							ul.list-group.list-group-flush
+								li.list-group-item 
+									input.form-control(name="pirate_accessory", type="text", placeholder="Pirate Accessory" value="#{pirate.pirate_accessory}")
+								li.list-group-item 
+									label(for="beard") Pirate Beard Color  
+									select.c-select(name="pirate_beard" value="#{pirate.pirate_beard}")
+										option(value="danger") Red Beard
+										option(value="info") Blue Beard
+										option(value="inverse") Black Beard
+										option(value="success") Green Beard
+										option(value="warning") Orange Beard
+										option(value="default") Grey Beard
+								li.list-group-item 
+									input.form-control(name="pirate_drink", type="text", placeholder="Pirate Drink" value="#{pirate.pirate_drink}")
+								li.list-group-item 
+									input.form-control(name="pirate_weapon", type="text", placeholder="Pirate Weapon" value="#{pirate.pirate_weapon}")
+								li.list-group-item
+									label(for="pirate_image_url") Profile Pic URL
+										div
+											small.text-muted optional
+									input.form-control(name="pirate_image_url") 
+							.card-footer.text-muted.text-center
+								button.btn.btn-success.btn-lg(type="submit") Update Pirate

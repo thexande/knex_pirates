@@ -1,6 +1,7 @@
 extends layout
 
 block content
+	//- div#vide-island(data-vide-bg="mp4: /video/wave.mp4" data-vide-options="postion: 0% 0%, muted: false, loop:true")  
 	.container
 		br
 		br
@@ -28,7 +29,7 @@ block content
 				.card-columns
 					each pirate in pirates
 						.card(class="card-#{pirate.pirate_beard}")
-							img.card-img-top.img-responsive(src='img/jolly.png', alt='Card image cap')
+							img.card-img-top.img-responsive(src='#{pirate.pirate_image_url}', alt='Card image cap')
 							.card-block
 								h4.card-title #{pirate.pirate_name}
 							ul.list-group.list-group-flush
@@ -41,7 +42,10 @@ block content
 								li.list-group-item 
 									strong Drink: 
 									span #{pirate.pirate_drink}
+								li.list-group-item 
+									strong Weapon: 
+									span #{pirate.pirate_weapon}
 							.card-footer.text-muted.text-center
 								.btn-group
-									a.btn.btn-primary Edit
-									a.btn.btn-danger Delete
+									a.btn.btn-primary(href="/pirates/#{pirate.id}/edit") Edit
+									a.btn.btn-danger(href="/pirates/#{pirate.id}/delete") Delete
