@@ -1,0 +1,21 @@
+{
+  "name": "pirates-crud-with-pg-knex-raw",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Alex <amurphy345@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/thexande/pirates-crud-with-pg-knex-raw",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables.net": "^1.10.12",
+    "bootstrap": "^3.3.6"
+  }
+}
